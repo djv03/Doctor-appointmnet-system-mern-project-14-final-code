@@ -41,8 +41,8 @@ const Layout = ({ children }) => {
   const SidebarMenu = user?.isAdmin
     ? adminMenu
     : user?.isDoctor
-    ? doctorMenu
-    : userMenu;
+      ? doctorMenu
+      : userMenu;
   return (
     <>
       <div className="main">
@@ -83,6 +83,8 @@ const Layout = ({ children }) => {
                 </Badge>
 
                 <Link to="/profile">{user?.name}</Link>
+                
+                {user?.isAdmin && <p >(admin)</p>}
               </div>
             </div>
             <div className="body">{children}</div>
